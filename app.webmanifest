@@ -1,0 +1,23 @@
+{
+    "name": "Havit_Online",
+    "short_name": "havitonline",
+    "theme_color": "#1c2035",
+    "display": "standalone",
+    "background_color": "#1c2035",
+    "start_url": "/",
+    "scope": "/",
+    "description": "havitonline official links",
+    "icons": [
+        {
+            "src": "img\\logo.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        },
+        {
+            "src": "img\\logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
