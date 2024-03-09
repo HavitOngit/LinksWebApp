@@ -6,12 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free</title>
     <script>
+        function extractUrl(text) {
+            const urlRegex = /(https?:\/\/[^\s]+)/g;
+            let match = urlRegex.exec(text);
+            return match ? match[0] : null;
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
             const parsedUrl = new URL(window.location);
             // searchParams.get() will properly handle decoding the values.
             // alert('Title shared: ' + parsedUrl.searchParams.get('title'));
             // alert('Text shared: ' + parsedUrl.searchParams.get('text'));
             // alert('URL shared: ' + parsedUrl.searchParams.get('url'));
+
+            window.location.replace(extractUrl(parsedUrl.searchParams.get('text')));
 
             document.getElementById('post-title').textContent = parsedUrl.searchParams.get('title');
         });
@@ -20,7 +28,10 @@
 
 <body>
     <div>
+
         <h1 id="post-title"></h1>
+        <p></p>
+        <h4>loading...</h4>
     </div>
 </body>
 
