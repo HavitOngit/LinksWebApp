@@ -49,7 +49,7 @@
             },
             {
                 "name": "graphs",
-                "accept": "image/svg+xml"
+                "accept": "image/*"
             }
         ]
     }
