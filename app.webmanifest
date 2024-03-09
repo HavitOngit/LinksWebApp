@@ -31,26 +31,12 @@
         }
     ],
     "share_target": {
-        "action": "/",
-        "method": "POST",
-        "enctype": "multipart/form-data",
+        "action": "/free/",
+        "method": "GET",
         "params": {
             "title": "title",
             "text": "text",
-            "url": "url",
-            "files": [
-                {
-                    "name": "records",
-                    "accept": [
-                        "text/csv",
-                        ".csv"
-                    ]
-                },
-                {
-                    "name": "graphs",
-                    "accept": "image/*"
-                }
-            ]
+            "url": "url"
         }
     }
 }
