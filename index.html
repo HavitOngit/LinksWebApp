@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="app.webmanifest">
     <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <script>
+        console.log('Hello, World!');
+        window.addEventListener('DOMContentLoaded', () => {
+            const parsedUrl = new URL(window.location);
+
+            alert(parsedUrl.searchParams.get('url'));
+        });
+    </script>
 </head>
 
 <body>
