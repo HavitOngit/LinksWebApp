@@ -20,7 +20,7 @@
             // alert('URL shared: ' + parsedUrl.searchParams.get('url'));
 
             // window.location.replace(extractUrl(parsedUrl.searchParams.get('text')));
-            document.getElementById('frame').src = extractUrl(parsedUrl.searchParams.get('text'));
+            document.getElementById('frame').src = "https://freedium.cfd/" + extractUrl(parsedUrl.searchParams.get('text'));
 
             document.getElementById('post-title').textContent = parsedUrl.searchParams.get('title');
         });
