@@ -37,20 +37,20 @@
         "params": {
             "title": "title",
             "text": "text",
-            "url": "url"
-        },
-        "files": [
-            {
-                "name": "records",
-                "accept": [
-                    "text/csv",
-                    ".csv"
-                ]
-            },
-            {
-                "name": "graphs",
-                "accept": "image/*"
-            }
-        ]
+            "url": "url",
+            "files": [
+                {
+                    "name": "records",
+                    "accept": [
+                        "text/csv",
+                        ".csv"
+                    ]
+                },
+                {
+                    "name": "graphs",
+                    "accept": "image/*"
+                }
+            ]
+        }
     }
 }
