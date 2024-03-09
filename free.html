@@ -12,6 +12,12 @@
             return match ? match[0] : null;
         }
 
+        function Free() {
+            var url = document.getElementById('user-url').value;
+            window.location.replace('https://freedium.cfd/' + url);
+
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
             const parsedUrl = new URL(window.location);
             // searchParams.get() will properly handle decoding the values.
@@ -20,9 +26,16 @@
             // alert('URL shared: ' + parsedUrl.searchParams.get('url'));
 
             setTimeout(() => {
+                if (extractUrl(parsedUrl.searchParams.get('text')) == null) {
+                    document.getElementById('url-input').style.visibility = 'visible';
+                    document.getElementById('Loading').style.display = 'none';
+
+                } else {
+
+                    window.location.replace("https://freedium.cfd/" + extractUrl(parsedUrl.searchParams.get('text')));
+                }
 
 
-                window.location.replace(extractUrl(parsedUrl.searchParams.get('text')));
             }, 1000
 
             )
@@ -36,10 +49,24 @@
 </head>
 
 <body>
-    <div style="display: flex; justify-content: center; justify-items: center;">
 
-        <img src="logos/logotudo.svg" alt="Havit">
-        <h6>Loading...</h6>
+    <div id="url-input" style="visibility:hidden;">
+
+        <input type="text" id="user-url" placeholder="Enter a URL">
+        <button onclick="Free()">GO</button>
+    </div>
+
+    <div id="Loading">
+
+        <div style=" display: flex; justify-content: center; justify-items: center; margin-top: 30%;">
+
+            <img src="logos/logotudo.svg" alt="Havit">
+
+        </div>
+        <center>
+
+            <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Loading...</h1>
+        </center>
 
     </div>
 </body>
