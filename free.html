@@ -25,20 +25,19 @@
             // alert('Text shared: ' + parsedUrl.searchParams.get('text'));
             // alert('URL shared: ' + parsedUrl.searchParams.get('url'));
 
-            setTimeout(() => {
-                if (extractUrl(parsedUrl.searchParams.get('text')) == null) {
-                    document.getElementById('url-input').style.visibility = 'visible';
-                    document.getElementById('Loading').style.display = 'none';
 
-                } else {
+            if (extractUrl(parsedUrl.searchParams.get('text')) == null) {
+                document.getElementById('url-input').style.visibility = 'visible';
+                document.getElementById('Loading').style.display = 'none';
 
-                    window.location.replace("https://freedium.cfd/" + extractUrl(parsedUrl.searchParams.get('text')));
-                }
+            } else {
+
+                window.location.replace("https://freedium.cfd/" + extractUrl(parsedUrl.searchParams.get('text')));
+            }
 
 
-            }, 1000
 
-            )
+
 
 
 
@@ -50,10 +49,16 @@
 
 <body>
 
-    <div id="url-input" style="visibility:hidden;">
+    <div id="url-input"
+        style="visibility:hidden; display: flex; justify-content: center; justify-items: center; flex-direction: column; margin-top: 40%;">
 
-        <input type="text" id="user-url" placeholder="Enter a URL">
-        <button onclick="Free()">GO</button>
+        <input type="text" id="user-url" placeholder="Enter a URL"
+            style="height: 40px; border-color: rgb(40, 31, 56); border-radius: 5vw; margin: 8px; padding-left: 12px;">
+        <center>
+
+            <button onclick="Free()"
+                style="width: 50%;height: 40px; border-radius: 5vw; background-color: rgb(53, 48, 104); color: aliceblue;">GO</button>
+        </center>
     </div>
 
     <div id="Loading">
