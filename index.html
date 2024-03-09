@@ -10,11 +10,12 @@
     <link rel="manifest" href="app.webmanifest">
     <link rel="icon" type="image/x-icon" href="img/logo.png">
     <script>
-        console.log('Hello, World!');
         window.addEventListener('DOMContentLoaded', () => {
             const parsedUrl = new URL(window.location);
-
-            alert(parsedUrl.searchParams.get('url'));
+            // searchParams.get() will properly handle decoding the values.
+            alert('Title shared: ' + parsedUrl.searchParams.get('title'));
+            alert('Text shared: ' + parsedUrl.searchParams.get('text'));
+            alert('URL shared: ' + parsedUrl.searchParams.get('url'));
         });
     </script>
 </head>
