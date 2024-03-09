@@ -19,8 +19,16 @@
             // alert('Text shared: ' + parsedUrl.searchParams.get('text'));
             // alert('URL shared: ' + parsedUrl.searchParams.get('url'));
 
-            // window.location.replace(extractUrl(parsedUrl.searchParams.get('text')));
-            document.getElementById('frame').src = "https://freedium.cfd/" + extractUrl(parsedUrl.searchParams.get('text'));
+            setTimeout(() => {
+
+
+                window.location.replace(extractUrl(parsedUrl.searchParams.get('text')));
+            }, 1000
+
+            )
+
+
+
 
             document.getElementById('post-title').textContent = parsedUrl.searchParams.get('title');
         });
@@ -28,13 +36,11 @@
 </head>
 
 <body>
-    <div>
-        <iframe id="frame" src="demo_iframe.htm" style="border:none; width: 100%; height: 100%;"
-            title="Iframe Example"></iframe>
+    <div style="display: flex; justify-content: center; justify-items: center;">
 
-        <!-- <h1 id="post-title"></h1>
-        <p></p>
-        <h4>loading...</h4> -->
+        <img src="logos/logotudo.svg" alt="Havit">
+        <h6>Loading...</h6>
+
     </div>
 </body>
 
