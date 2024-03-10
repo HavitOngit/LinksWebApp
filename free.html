@@ -29,11 +29,27 @@
 
 
             if (extractUrl(parsedUrl.searchParams.get('text')) == null) {
-                document.getElementById('url-input').style.visibility = 'visible';
+                // document.getElementById('url-input').style.visibility = 'visible';
                 document.getElementById('Loading').style.display = 'none';
+                document.body.innerHTML = `<center>
+
+
+<div id="url-input"
+    style=" display: flex; justify-content: center; justify-items: center; flex-direction: column; margin-top: 40%;max-width: 800px;">
+
+    <input type="text" id="user-url" placeholder="Enter a URL"
+        style="height: 40px; border-color: rgb(40, 31, 56); border-radius: 5vw; margin: 8px; padding-left: 12px;">
+    <center>
+
+        <button onclick="Free()"
+            style="width: 50%;height: 40px; border-radius: 5vw; background-color: rgb(53, 48, 104); color: aliceblue;">GO</button>
+    </center>
+</div>
+</center>`
 
             } else {
 
+                document.getElementById('post-title').textContent = parsedUrl.searchParams.get('title');
                 window.location.replace("https://freedium.cfd/" + extractUrl(parsedUrl.searchParams.get('text')));
             }
 
@@ -44,43 +60,28 @@
 
 
 
-            document.getElementById('post-title').textContent = parsedUrl.searchParams.get('title');
         });
     </script>
 </head>
 
 <body>
-    <center>
 
+    <div id="Loading"
+        style=" display: flex; justify-content: center; justify-items: center; flex-direction: column; margin: 2vw; margin-top: 10%; margin-left: 10%;">
 
-        <div id="url-input"
-            style="visibility:hidden; display: flex; justify-content: center; justify-items: center; flex-direction: column; margin-top: 40%;max-width: 800px;">
-
-            <input type="text" id="user-url" placeholder="Enter a URL"
-                style="height: 40px; border-color: rgb(40, 31, 56); border-radius: 5vw; margin: 8px; padding-left: 12px;">
-            <center>
-
-                <button onclick="Free()"
-                    style="width: 50%;height: 40px; border-radius: 5vw; background-color: rgb(53, 48, 104); color: aliceblue;">GO</button>
-            </center>
-        </div>
-    </center>
-
-    <div id="Loading">
-
-        <div style=" display: flex; justify-content: center; justify-items: center; margin-top: 30%;">
+        <div>
 
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:v="https://svgstorm.com" viewBox="0 0 312 320" width="312"
                 height="320">
                 <g fill="None" fill-opacity="0.0" stroke="#000000" stroke-opacity="0.00" stroke-width="0.3">
                     <path d="
-M 0.00 320.00 
-L 312.00 320.00
-L 312.00 0.00
-L 0.00 0.00
-L 0.00 320.00
-M 158.00 69.00 
-C 160.27 69.19 162.72 69.07 165.00 69.00
+            M 0.00 320.00 
+            L 312.00 320.00
+            L 312.00 0.00
+            L 0.00 0.00
+            L 0.00 320.00
+            M 158.00 69.00 
+            C 160.27 69.19 162.72 69.07 165.00 69.00
 C 167.18 68.93 168.68 69.52 171.00 70.00
 C 175.40 70.49 178.97 70.20 183.00 72.00
 C 186.36 73.50 189.09 76.40 192.00 78.00
@@ -574,6 +575,7 @@ M 155.00 98.00
 C 151.59 98.94 154.43 101.82 154.00 104.00
 C 152.01 104.96 144.21 103.74 147.00 108.00
 C 147.92 108.55 149.26 109.32 150.00 110.00
+
 C 153.00 110.89 155.97 107.43 157.00 105.00
 C 160.35 107.00 166.97 107.99 164.00 102.00
 C 162.62 101.57 160.21 101.55 159.00 101.00
@@ -2664,13 +2666,17 @@ C 151.32 255.48 152.12 256.91 154.00 257.00 Z" />
                 </g>
             </svg>
 
+            <center>
+
+                <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Loading...</h1>
+            </center>
         </div>
-        <center>
-
-            <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Loading...</h1>
-        </center>
-
         <p id="post-title"></p>
+
+
+
+
+
 
     </div>
 </body>
